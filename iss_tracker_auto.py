@@ -14,7 +14,7 @@ def track_iss():
     # North Bangalore Coordinates
     MY_LAT, MY_LON = 13.1584, 77.5946
 
-    print("🛰️  ISS TRACKER STARTING...")
+    print("  ISS TRACKER STARTING...")
     print("Updates will occur every 10 minutes. Press Ctrl+C to stop.\n")
 
     while True:
@@ -34,7 +34,7 @@ def track_iss():
 
             # Proximity Check
             if abs(lat - MY_LAT) < 5 and abs(lon - MY_LON) < 5:
-                print(">>> 🚀 ALERT: ISS is passing near Bangalore!")
+                print(">>>  ALERT: ISS is passing near Bangalore!")
             
             print(f"Map: https://www.google.com/maps?q={lat},{lon}")
             print("-" * 30)
@@ -44,7 +44,7 @@ def track_iss():
             time.sleep(600)
 
         except Exception as e:
-            print(f"❌ Error: {e}. Retrying in 60 seconds...")
+            print(f" Error: {e}. Retrying in 60 seconds...")
             time.sleep(60)
 
 if __name__ == "__main__":
