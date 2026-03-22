@@ -17,7 +17,7 @@ def track_iss():
     ts = load.timescale()
     t = ts.now()
 
-    print("🛰️ Downloading latest TLE data from Celestrak...")
+    print(" Downloading latest TLE data from Celestrak...")
     url = 'https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&FORMAT=tle'
     
     try:
@@ -25,7 +25,7 @@ def track_iss():
         by_name = {sat.name: sat for sat in satellites}
         iss = by_name['ISS (ZARYA)']
     except Exception as e:
-        print(f"❌ Connection Error: {e}")
+        print(f" Connection Error: {e}")
         return
 
     # 4. Calculate Position
@@ -41,9 +41,9 @@ def track_iss():
     print(f"Azimuth:  {az.degrees:.2f}°")
     
     if alt.degrees > 0:
-        print("\n🚀 SUCCESS: The ISS is currently in your sky!")
+        print("\n SUCCESS: The ISS is currently in your sky!")
     else:
-        print("\n🌑 STATUS: The ISS is currently below the horizon.")
+        print("\n STATUS: The ISS is currently below the horizon.")
 
 if __name__ == "__main__":
     track_iss()
